@@ -15,7 +15,7 @@ import org.openqa.selenium.support.ui.Select;
 public class Helper {
 
 	
-	// handle windows, ifraame, alert, etc
+	// handle windows, iframe, alert, etc
 	
 	public static void selectDropDownValue(WebElement ele, String visibleText) {
 
