@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.ITestResult;
+import org.testng.Reporter;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
@@ -38,8 +39,10 @@ public class TestBase {
 
 	@BeforeSuite
 	public void setupSuite() {
+		Reporter.log("instantiating an config and xlsx data provider.", true);
 		configData = new ConfigDataProvider();
 		xlsxData = new XLSXDataProvider();
+		Reporter.log("config and xlsx data provider is instantiated.", true);
 		}
 	@BeforeTest
 	public void setupExtent(){
