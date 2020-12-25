@@ -48,8 +48,11 @@ public class AddUserPage {
 	public void addNewUser(String selectRole, String employeeName, String userName, String status, String password,
 			String confirmPassword) {
 		try {
+
 			btnAdd.click();
+
 			Helper.selectDropDownValue(systemUserDD, selectRole);
+
 			EmployeeName.sendKeys(employeeName);
 
 			username.sendKeys(userName);

@@ -3,16 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.visionit.orangehrm.testCases.Login_Tc_001">
+      <class name="com.visionit.orangehrm.testCases.AddUserTC_002">
         <methods>
-          <include name="endReport"/>
-          <include name="loginOrangeHrmTest"/>
+          <include name="addNewUserTest"/>
           <include name="setupSuite"/>
           <include name="setupExtent"/>
           <include name="setUp"/>
-          <include name="tearDown"/>
         </methods>
-      </class> <!-- com.visionit.orangehrm.testCases.Login_Tc_001 -->
+      </class> <!-- com.visionit.orangehrm.testCases.AddUserTC_002 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -39,13 +39,17 @@ public class TestBase {
 
 	@BeforeSuite
 	public void setupSuite() {
-		Reporter.log("instantiating an config and xlsx data provider.", true);
+		Reporter.log("Instantiation of Config and XLSX Data provider ...", true);
 		configData = new ConfigDataProvider();
 		xlsxData = new XLSXDataProvider();
-		Reporter.log("config and xlsx data provider is instantiated.", true);
+		Reporter.log("Config and XLSX Data provider is ready to use..", true);
+		
 		}
+	
 	@BeforeTest
 	public void setupExtent(){
+		
+		Reporter.log("Setting up extent report ", true);
 		
 		File fs = new File("./Reports/orange_hrm_"+Helper.getcustomDate()+".html");
 
@@ -62,11 +66,16 @@ public class TestBase {
 		report.setSystemInfo("OS", "Windows");
 		report.setSystemInfo("Tester Nane", "Vasant");
 		report.setSystemInfo("Browser", "Chrome");
+		
+		Reporter.log("Extent report Configuration is done .... ", true);
+		
 	
 	}
 	
 	@AfterTest
 	public void endReport() {
+		Reporter.log("flush the extent report ", true);
+		
 		report.flush();
 	}
 
@@ -75,12 +84,17 @@ public class TestBase {
 	public void setUp(@Optional("Chrome") String browserName) {
 
 		if (browserName.equals("Chrome")) {
-			System.setProperty("webdriver.chrome.driver", "./Driver/chromedriver.exe");
+			Reporter.log("Launch Chrome browser ", true);
+			
+			//System.setProperty("webdriver.chrome.driver", "./Driver/chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver","./chromedriver.exe");
 			driver = new ChromeDriver();
 		} else if (browserName.equals("Firefox")) {
+			Reporter.log("Launch Firefox browser ", true);
 			System.setProperty("webdriver.gecko.driver", "./Driver/geckodriver.exe");
 			driver = new FirefoxDriver();
 		} else if (browserName.equals("IE")) {
+			Reporter.log("Launch IE browser ", true);
 			System.setProperty("webdriver.ie.driver", "./Driver/IEDriverServer.exe");
 			driver = new InternetExplorerDriver();
 		}

@@ -34,4 +34,8 @@ public class HomePage {
 		return new AddUserPage(driver);
 
 	}
+	
+	public void LogOutFromOramgeHRM(){
+		
+	}
 }

@@ -22,7 +22,7 @@ public class Login_Tc_001 extends TestBase {
 		test.info("Enter valid username and password and then click on login button");
 
 		String actualTitle = driver.getTitle();
-		String expectedTitle = "";
+		String expectedTitle = "OrangeHRM";
 
 		if (actualTitle.equals(expectedTitle)) {
 			Assert.assertTrue(true);
